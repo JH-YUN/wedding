@@ -1,0 +1,63 @@
+{
+  "introConfig": {
+    "durationMs": 2000
+  },
+  "weddingInfo": {
+    "brideFullName": "윤진한",
+    "brideFirstName": "진한",
+    "groomFullName": "최형빈",
+    "groomFirstName": "형빈",
+    "brideFatherName": "윤아빠",
+    "brideMotherName": "윤엄마",
+    "groomFatherName": "최아빠",
+    "groomMotherName": "최엄마",
+    "date": "2025-11-08T16:20:00",
+    "location": "파티오벨라",
+    "address": "경기도 안양시 동안구 시민대로159번길 25 1층",
+    "mapUrl": "https://maps.google.com/?q=서울특별시%20000구%20000로%20123"
+  },
+  "galleryImages": [
+    { "id": 1, "src": "/placeholder.jpg", "alt": "웨딩 사진 1" },
+    { "id": 2, "src": "/placeholder.jpg", "alt": "웨딩 사진 2" },
+    { "id": 3, "src": "/placeholder.jpg", "alt": "웨딩 사진 3" },
+    { "id": 4, "src": "/placeholder.jpg", "alt": "웨딩 사진 4" },
+    { "id": 5, "src": "/placeholder.jpg", "alt": "웨딩 사진 5" },
+    { "id": 6, "src": "/placeholder.jpg", "alt": "웨딩 사진 6" }
+  ],
+  "accountInfo": {
+    "groomAccounts": [
+      {
+        "bankName": "KB국민은행",
+        "accountNumber": "123-456-78910",
+        "accountHolder": "최형빈"
+      },
+      {
+        "bankName": "신한은행",
+        "accountNumber": "110-123-456789",
+        "accountHolder": "최아버님"
+      },
+      {
+        "bankName": "우리은행",
+        "accountNumber": "1002-123-456789",
+        "accountHolder": "최어머님"
+      }
+    ],
+    "brideAccounts": [
+      {
+        "bankName": "KB국민은행",
+        "accountNumber": "123-456-78910",
+        "accountHolder": "윤진한"
+      },
+      {
+        "bankName": "신한은행",
+        "accountNumber": "110-123-456789",
+        "accountHolder": "윤아버님"
+      },
+      {
+        "bankName": "우리은행",
+        "accountNumber": "1002-123-456789",
+        "accountHolder": "윤어머님"
+      }
+    ]
+  }
+}

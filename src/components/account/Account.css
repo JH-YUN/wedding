@@ -1,0 +1,132 @@
+.account-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.account-container {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.account-accordion {
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-button {
+  width: 100%;
+  background-color: white;
+  padding: 15px;
+  text-align: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.accordion-button:hover {
+  background-color: #f9f9f9;
+}
+
+.accordion-button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.accordion-title {
+  flex-grow: 1;
+}
+
+.accordion-icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #fff;
+}
+
+.accordion-content.open {
+  max-height: 500px; /* 충분히 큰 값 */
+}
+
+.account-item {
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.account-item:last-child {
+  border-bottom: none;
+}
+
+.account-item:hover {
+  background-color: #f8f8f8;
+}
+
+.account-bank {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.account-number {
+  font-size: 1.1rem;
+  margin-bottom: 3px;
+  color: #333;
+}
+
+.account-holder {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.copy-hint {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 5px;
+  text-align: right;
+}
+
+/* 오버레이 효과 - 복사 시 표시 */
+.account-item.copied::after {
+  content: "복사됨!";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--accent-color-rgb), 0.8);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  animation: fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

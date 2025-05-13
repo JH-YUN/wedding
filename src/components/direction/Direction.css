@@ -1,0 +1,124 @@
+.direction-section {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.venue-info {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.venue-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.venue-info p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.map-container {
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.transportation-info {
+  margin-bottom: 2rem;
+}
+
+.transportation-info h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.transport-section {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.transport-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.transport-header h4 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.transport-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  min-width: 2.5rem;
+  text-align: center;
+}
+
+.transport-content p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.map-links {
+  text-align: center;
+}
+
+.map-links h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.map-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.map-button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.map-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.map-button.naver {
+  background-color: #19ce60;
+}
+
+.map-button.kakao {
+  background-color: #fee500;
+  color: #000;
+}
+
+.map-button.google {
+  background-color: #4285f4;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .map-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .map-button {
+    width: 100%;
+  }
+}
