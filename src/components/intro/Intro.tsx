@@ -1,6 +1,5 @@
 import { onMount, createSignal } from "solid-js";
 import { setIntroCompleted } from "../../store";
-import weddingConfig from "../../data/wedding-config.json";
 import "./Intro.css";
 
 export default function Intro() {
@@ -32,13 +31,6 @@ export default function Intro() {
         <div class="typing-effect-wrapper">
           <p> 형빈 ♥ 진한 결혼식에 초대합니다.</p>
         </div>
-        {/* <div class="pulse-wrapper">
-          <h1 class="title-animate">Wedding Invitation</h1>
-          <p class="names-animate">
-            {weddingConfig.weddingInfo.groomFullName} &amp;{" "}
-            {weddingConfig.weddingInfo.brideFullName}
-          </p>
-        </div> */}
       </div>
     </div>
   );
