@@ -41,7 +41,11 @@ jobs:
         run: pnpm build
         env:
           NODE_ENV: production
-
+          VITE_KAKAO_APP_KEY: ${{ secrets.VITE_KAKAO_APP_KEY }}
+          VITE_TMAP_APP_KEY: ${{ secrets.VITE_TMAP_APP_KEY }}
+          VITE_NAVER_CLIENT_ID: ${{ secrets.VITE_NAVER_CLIENT_ID }}
+          VITE_KAKAO_SHARE_TEMPLATE_ID: ${{ secrets.VITE_KAKAO_SHARE_TEMPLATE_ID }}
+          
       - name: Setup Pages
         uses: actions/configure-pages@v5
         
