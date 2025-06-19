@@ -1,4 +1,4 @@
-import { Show } from "solid-js";
+import { onMount, Show } from "solid-js";
 import { introCompleted } from "./store";
 import Intro from "./components/intro/Intro";
 import Main from "./components/main/Main";
@@ -8,10 +8,21 @@ import Calendar from "./components/calendar/Calendar";
 import Direction from "./components/direction/Direction";
 import Account from "./components/account/Account";
 import MetaTags from "./components/MetaTags";
+import FloatingShareButton from "./components/shared/FloatingShareButton";
 import "./styles/global.css";
 import "./App.css";
 
+declare global {
+  interface Window {
+    Kakao: any;
+  }
+}
+
+
 function App() {
+  onMount(() => {
+    window.Kakao.init(import.meta.env.VITE_KAKAO_APP_KEY);
+  });
   return (
     <>
       <MetaTags ogImageUrl="/og-image.jpg" />
@@ -29,6 +40,9 @@ function App() {
           <Direction />
           <Account />
         </div>
+        
+        {/* 플로팅 공유 버튼 */}
+        <FloatingShareButton />
       </Show>
     </>
   );

@@ -1,0 +1,61 @@
+.floating-button-wrapper {
+  position: relative;
+  max-width: var( --max-width);
+}
+.floating-share-button {
+  position: fixed;
+  bottom: 24px;
+  right: max(24px, calc((100vw - var(--max-width)) / 2 + 24px));
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(249, 224, 0, 1); /* 카카오톡 컬러를 반투명하게 */
+  
+  color: #3c1e1e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.floating-share-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.floating-share-button:active {
+  transform: scale(0.95);
+}
+
+.kakao-icon {
+  width: 75%;
+  height: 75%;
+  border: none;
+  transition: transform 0.2s ease;
+  opacity: 0.7;
+}
+
+.floating-share-button:hover .kakao-icon {
+  transform: scale(1.1);
+}
+
+/* 모바일 대응 */
+/* @media (max-width: 768px) {
+  .floating-share-button {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .kakao-icon {
+    width: 20px;
+    height: 20px;
+  }
+}  */

@@ -29,7 +29,6 @@ body {
   width: 100%;
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  perspective: 1000px;
 }
 
 body {
@@ -48,7 +47,6 @@ body {
   overflow-x: hidden;
   background-color: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-  will-change: transform, opacity;
 }
 
 a {
