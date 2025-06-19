@@ -65,6 +65,8 @@
   border-radius: 50%;
   font-weight: bold;
   margin: 7px;
+  position: relative;
+  z-index: 1;
 }
 
 .wedding-day::after {
@@ -78,6 +80,9 @@
   border: 2px solid var(--accent-color);
   border-radius: 50%;
   animation: pulse 2s infinite;
+  -webkit-animation: pulse 2s infinite;
+  z-index: -1;
+  pointer-events: none;
 }
 
 @keyframes pulse {
