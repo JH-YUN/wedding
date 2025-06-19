@@ -1,0 +1,16 @@
+{
+  "name": "Wedding Invitation",
+  "short_name": "Wedding",
+  "description": "모바일 청첩장",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffb6c1",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}

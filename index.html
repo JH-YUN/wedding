@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/wedding/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="모바일 청첩장" />
+    <meta name="theme-color" content="#ffb6c1" />
+    <meta property="og:title" content="Wedding Invitation" />
+    <meta property="og:description" content="결혼식에 초대합니다" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/wedding/manifest.json" />
+    <!-- 카카오 SDK -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <title>Wedding Invitation</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <style>
+      /* 600px 이상인 경우 배경색과 함께 앱을 중앙에 배치 */
+      @media (min-width: 601px) {
+        body {
+          background-color: #f8f8f8;
+          padding: 0;
+        }
+        #root {
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/wedding/assets/index-VA1SGVef.js"></script>
+    <link rel="stylesheet" crossorigin href="/wedding/assets/index-CNNDz9i8.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // 서비스 워커 해제 (기존에 등록된 서비스 워커가 있다면 제거)
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for(let registration of registrations) {
+            registration.unregister();
+            console.log('Service Worker unregistered');
+          }
+        });
+      }
+      
+      // 서비스 워커 등록 코드 비활성화 (개발 모드에서는 사용하지 않음)
+      // 프로덕션 환경에서만 서비스 워커 활성화하려면 주석 해제
+      /*
+      if ('serviceWorker' in navigator && window.location.hostname !== 'localhost') {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+              console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+              console.error('Service Worker registration failed:', error);
+            });
+        });
+      }
+      */
+    </script>
+  </body>
+</html>
