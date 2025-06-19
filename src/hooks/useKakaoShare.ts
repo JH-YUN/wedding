@@ -6,7 +6,7 @@ export function useKakaoShare() {
     }
 
     window.Kakao.Share.sendCustom({
-      templateId: import.meta.env.VITE_KAKAO_TEMPLATE_ID
+      templateId: Number(import.meta.env.VITE_KAKAO_SHARE_TEMPLATE_ID)
     });
   };
   
