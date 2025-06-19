@@ -3,7 +3,7 @@ import solid from 'vite-plugin-solid'
 
 export default defineConfig({
   plugins: [solid()],
-  base: './',
+  base: process.env.NODE_ENV === 'production' ? '/wedding/' : './',
   server: {
     hmr: {
       overlay: true,

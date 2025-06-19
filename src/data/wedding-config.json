@@ -28,34 +28,34 @@
     "groomAccounts": [
       {
         "bankName": "KB국민은행",
-        "accountNumber": "123-456-78910",
+        "accountNumber": "111-456-78910",
         "accountHolder": "최형빈"
       },
       {
         "bankName": "신한은행",
-        "accountNumber": "110-123-456789",
+        "accountNumber": "222-123-456789",
         "accountHolder": "최아버님"
       },
       {
         "bankName": "우리은행",
-        "accountNumber": "1002-123-456789",
+        "accountNumber": "333-123-456789",
         "accountHolder": "최어머님"
       }
     ],
     "brideAccounts": [
       {
         "bankName": "KB국민은행",
-        "accountNumber": "123-456-78910",
+        "accountNumber": "444-456-78910",
         "accountHolder": "윤진한"
       },
       {
         "bankName": "신한은행",
-        "accountNumber": "110-123-456789",
+        "accountNumber": "555-123-456789",
         "accountHolder": "윤아버님"
       },
       {
         "bankName": "우리은행",
-        "accountNumber": "1002-123-456789",
+        "accountNumber": "666-123-456789",
         "accountHolder": "윤어머님"
       }
     ]

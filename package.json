@@ -14,6 +14,7 @@
     "solid-js": "^1.9.5"
   },
   "devDependencies": {
+    "@types/node": "^24.0.3",
     "gh-pages": "^6.3.0",
     "typescript": "~5.7.2",
     "vite": "^6.3.0",
