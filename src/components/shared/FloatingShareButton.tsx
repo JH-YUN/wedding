@@ -16,7 +16,7 @@ export default function FloatingShareButton() {
         aria-label="카카오톡으로 공유하기"
       >
         <img 
-          src="/kakaotalk.jpeg" 
+          src="./kakaotalk.jpeg" 
           alt="카카오톡" 
           class="kakao-icon"
         />
