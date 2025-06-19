@@ -1,7 +1,16 @@
+import { onMount } from "solid-js";
 import weddingConfig from "../../data/wedding-config.json";
 import "./Direction.css";
 
+declare global {
+  interface Window {
+    naver: any;
+  }
+}
+
 export default function Direction() {
+  let mapElement: HTMLDivElement | undefined;
+
   // 지도 관련 URL들
   const mapUrls = {
     naver: `https://map.naver.com/p/search/${encodeURIComponent(
@@ -10,10 +19,88 @@ export default function Direction() {
     kakao: `https://map.kakao.com/link/search/${encodeURIComponent(
       weddingConfig.weddingInfo.address
     )}`,
-    google: `https://maps.google.com/?q=${encodeURIComponent(
-      weddingConfig.weddingInfo.address
+    kakaonavi: `https://kakaonavi.kakao.com/launch/index.do?coord_type=WGS84&coord=${126.9477},${37.3956}&dest_name=${encodeURIComponent(
+      weddingConfig.weddingInfo.location
     )}`,
+    tmap: `https://apis.openapi.sk.com/tmap/app/routes?appKey=${import.meta.env.VITE_TMAP_APP_KEY}&name=${encodeURIComponent(
+      weddingConfig.weddingInfo.location
+    )}&lon=126.9477&lat=37.3956`,
   };
+
+  onMount(() => {
+    // 네이버 지도 API 스크립트 로드
+    const loadNaverMaps = () => {
+      if (window.naver && window.naver.maps) {
+        initializeMap();
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${import.meta.env.VITE_NAVER_CLIENT_ID}`;
+      script.onload = () => {
+        initializeMap();
+      };
+      document.head.appendChild(script);
+    };
+
+    const initializeMap = () => {
+      if (!window.naver || !window.naver.maps || !mapElement) return;
+
+      // 파티오벨라 좌표 (안양시 동안구)
+      const location = new window.naver.maps.LatLng(37.3956, 126.9477);
+
+      const mapOptions = {
+        center: location,
+        zoom: 17,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+          style: window.naver.maps.MapTypeControlStyle.BUTTON,
+          position: window.naver.maps.Position.TOP_LEFT
+        },
+        zoomControl: true,
+        zoomControlOptions: {
+          style: window.naver.maps.ZoomControlStyle.LARGE,
+          position: window.naver.maps.Position.TOP_RIGHT
+        }
+      };
+
+      const map = new window.naver.maps.Map(mapElement, mapOptions);
+
+      // 마커 추가
+      const marker = new window.naver.maps.Marker({
+        position: location,
+        map: map,
+        title: weddingConfig.weddingInfo.location,
+        icon: {
+          content: '<div style="background: #ff6b6b; color: white; padding: 8px 12px; border-radius: 20px; font-weight: bold; font-size: 12px; white-space: nowrap;">💒 ' + weddingConfig.weddingInfo.location + '</div>',
+          size: new window.naver.maps.Size(150, 36),
+          anchor: new window.naver.maps.Point(75, 18)
+        }
+      });
+
+      // 정보창 추가
+      const infoWindow = new window.naver.maps.InfoWindow({
+        content: `
+          <div style="width:200px;text-align:center;padding:10px;">
+            <h4 style="margin:0 0 5px 0;">${weddingConfig.weddingInfo.location}</h4>
+            <p style="margin:0;font-size:12px;color:#666;">${weddingConfig.weddingInfo.address}</p>
+          </div>
+        `
+      });
+
+      // 마커 클릭시 정보창 표시
+      window.naver.maps.Event.addListener(marker, 'click', function() {
+        if (infoWindow.getMap()) {
+          infoWindow.close();
+        } else {
+          infoWindow.open(map, marker);
+        }
+      });
+    };
+
+    loadNaverMaps();
+  });
 
   return (
     <section class="direction-section">
@@ -25,16 +112,16 @@ export default function Direction() {
       </div>
 
       <div class="map-container">
-        {/* Google Maps iframe - 실제 좌표로 업데이트 필요 */}
-        <iframe
-          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.4328759429354!2d126.95030677677792!3d37.47588897205639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDI4JzMzLjIiTiAxMjbCsDU3JzE1LjAiRQ!5e0!3m2!1sko!2skr!4v1621234567890!5m2!1sko!2skr`}
-          width="100%"
-          height="300"
-          style="border:0;"
-          allowfullscreen
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        {/* 네이버 지도 */}
+        <div 
+          ref={mapElement} 
+          style={{
+            width: '100%',
+            height: '300px',
+            border: '1px solid #ddd',
+            'border-radius': '8px'
+          }}
+        />
       </div>
 
       <div class="transportation-info">
@@ -94,6 +181,7 @@ export default function Direction() {
             rel="noopener noreferrer"
             class="map-button naver"
           >
+            <img src="/navermap.png" alt="네이버지도" style={{width: '20px', height: '20px', 'margin-right': '8px'}} />
             네이버 지도
           </a>
           <a
@@ -102,15 +190,26 @@ export default function Direction() {
             rel="noopener noreferrer"
             class="map-button kakao"
           >
+            <img src="/kakaomap.png" alt="카카오지도" style={{width: '20px', height: '20px', 'margin-right': '8px'}} />
             카카오 지도
           </a>
           <a
-            href={mapUrls.google}
+            href={mapUrls.kakaonavi}
             target="_blank"
             rel="noopener noreferrer"
-            class="map-button google"
+            class="map-button kakaonavi"
           >
-            구글 지도
+            <img src="/kakaonavi.png" alt="카카오내비" style={{width: '20px', height: '20px', 'margin-right': '8px'}} />
+            카카오 내비
+          </a>
+          <a
+            href={mapUrls.tmap}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="map-button tmap"
+          >
+            <img src="/tmap.png" alt="티맵" style={{width: '20px', height: '20px', 'margin-right': '8px'}} />
+            T맵
           </a>
         </div>
       </div>
