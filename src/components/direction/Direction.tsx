@@ -181,8 +181,17 @@ export default function Direction() {
             rel="noopener noreferrer"
             class="map-button naver"
           >
-            <img src="./navermap.png" alt="네이버지도" style={{width: '20px', height: '20px', 'margin-right': '8px'}} />
+            <img src="./navermap.png" alt="네이버지도" />
             네이버 지도
+          </a>
+          <a
+            href={mapUrls.tmap}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="map-button tmap"
+          >
+            <img src="./tmap.png" alt="티맵" />
+            T맵
           </a>
           <a
             href={mapUrls.kakao}
@@ -190,7 +199,7 @@ export default function Direction() {
             rel="noopener noreferrer"
             class="map-button kakao"
           >
-            <img src="./kakaomap.png" alt="카카오지도" style={{width: '20px', height: '20px', 'margin-right': '8px'}} />
+            <img src="./kakaomap.png" alt="카카오지도" />
             카카오 지도
           </a>
           <a
@@ -199,17 +208,8 @@ export default function Direction() {
             rel="noopener noreferrer"
             class="map-button kakaonavi"
           >
-            <img src="./kakaonavi.png" alt="카카오내비" style={{width: '20px', height: '20px', 'margin-right': '8px'}} />
+            <img src="./kakaonavi.png" alt="카카오내비" />
             카카오 내비
-          </a>
-          <a
-            href={mapUrls.tmap}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="map-button tmap"
-          >
-            <img src="./tmap.png" alt="티맵" style={{width: '20px', height: '20px', 'margin-right': '8px'}} />
-            T맵
           </a>
         </div>
       </div>
