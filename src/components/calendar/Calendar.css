@@ -53,6 +53,8 @@
   justify-content: center;
   position: relative;
   font-size: 0.9rem;
+  box-sizing: border-box;
+  min-height: 40px; /* 최소 높이 보장 */
 }
 
 .other-month {
@@ -60,13 +62,26 @@
 }
 
 .wedding-day {
-  background-color: var(--accent-color);
+  background-color: transparent;
   color: white;
-  border-radius: 50%;
   font-weight: bold;
-  margin: 7px;
   position: relative;
   z-index: 1;
+  /* margin과 크기 계산 제거 */
+  box-sizing: border-box;
+}
+
+.wedding-day::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .wedding-day::after {
@@ -75,14 +90,16 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 32px;
-  height: 32px;
+  /* 동적 크기 조정 */
+  width: 85%;
+  height: 85%;
   border: 2px solid var(--accent-color);
   border-radius: 50%;
   animation: pulse 2s infinite;
   -webkit-animation: pulse 2s infinite;
-  z-index: -1;
+  z-index: -2;
   pointer-events: none;
+  box-sizing: border-box;
 }
 
 @keyframes pulse {
