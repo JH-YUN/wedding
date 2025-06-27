@@ -36,3 +36,37 @@
 .gallery-item:hover .gallery-image-placeholder {
   transform: scale(1.05);
 }
+
+.gallery-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 더보기 버튼 스타일 */
+.load-more-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.load-more-button {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(var(--accent-color-rgb), 0.3);
+}
+
+.load-more-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--accent-color-rgb), 0.4);
+}
+
+.load-more-button:active {
+  transform: translateY(0);
+}

@@ -21,7 +21,7 @@ export default function Main() {
       <div class="main-image-container">
         {/* Placeholder for the full-width image */}
         <div class="main-image-placeholder">
-          <span>메인 이미지</span>
+          <img src="./image/pic3.jpeg" alt="메인 이미지" />
         </div>
       </div>
 

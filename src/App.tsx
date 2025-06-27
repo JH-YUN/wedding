@@ -21,7 +21,11 @@ declare global {
 
 function App() {
   onMount(() => {
-    window.Kakao.init(import.meta.env.VITE_KAKAO_APP_KEY);
+    try {
+      window.Kakao.init(import.meta.env.VITE_KAKAO_APP_KEY);
+    } catch (error) {
+      console.error("Kakao SDK 초기화 실패:", error);
+    }
   });
   return (
     <>
