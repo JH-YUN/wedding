@@ -3,7 +3,6 @@ import {
   selectedImageId,
   setSelectedImageId,
   selectedImageIndex,
-  totalImages,
 } from "../../store";
 import Lightbox from "./Lightbox";
 import "./Gallery.css";
