@@ -1,9 +1,9 @@
 :root {
-  --primary-color: #ffb6c1;
-  --secondary-color: #f8f9fa;
+  --primary-color: #d1b7a1;
+  --secondary-color: #f5f3ed;
   --text-color: #333;
-  --accent-color: #ff8c94;
-  --accent-color-rgb: 255, 140, 148;
+  --accent-color: #d1b7a1;
+  --accent-color-rgb: 209 183 161;
   --max-width: 600px;
   --transition-time: 300ms;
   --font-primary: "Jua", sans-serif;
