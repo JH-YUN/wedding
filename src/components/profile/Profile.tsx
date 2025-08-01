@@ -4,7 +4,7 @@ import "./Profile.css";
 export default function Profile() {
   return (
     <section class="profile-section">
-      <h2 class="section-title">결혼합니다</h2>
+      <h2 class="section-title">초대합니다</h2>
 
       <div class="couple-info">
         <div class="profile-card">

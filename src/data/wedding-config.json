@@ -39,12 +39,12 @@
       {
         "bankName": "신한은행",
         "accountNumber": "222-123-456789",
-        "accountHolder": "최아버님"
+        "accountHolder": "최종원"
       },
       {
         "bankName": "우리은행",
         "accountNumber": "333-123-456789",
-        "accountHolder": "최어머님"
+        "accountHolder": "류경미"
       }
     ],
     "brideAccounts": [
@@ -56,12 +56,12 @@
       {
         "bankName": "신한은행",
         "accountNumber": "555-123-456789",
-        "accountHolder": "윤아버님"
+        "accountHolder": "윤석현"
       },
       {
         "bankName": "우리은행",
         "accountNumber": "666-123-456789",
-        "accountHolder": "윤어머님"
+        "accountHolder": "김이순"
       }
     ]
   }
