@@ -110,6 +110,36 @@ export default function Account() {
           </div>
         </div>
       </div>
+
+      {/* 화환 사양 안내 */}
+      <div class="flower-notice">
+        <div class="flower-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* 꽃잎들 */}
+            <ellipse cx="20" cy="12" rx="4" ry="8" fill="#FFB6C1" opacity="0.8" transform="rotate(0 20 20)"/>
+            <ellipse cx="20" cy="12" rx="4" ry="8" fill="#FFB6C1" opacity="0.8" transform="rotate(45 20 20)"/>
+            <ellipse cx="20" cy="12" rx="4" ry="8" fill="#FFB6C1" opacity="0.8" transform="rotate(90 20 20)"/>
+            <ellipse cx="20" cy="12" rx="4" ry="8" fill="#FFB6C1" opacity="0.8" transform="rotate(135 20 20)"/>
+            <ellipse cx="20" cy="12" rx="4" ry="8" fill="#FFB6C1" opacity="0.8" transform="rotate(180 20 20)"/>
+            <ellipse cx="20" cy="12" rx="4" ry="8" fill="#FFB6C1" opacity="0.8" transform="rotate(225 20 20)"/>
+            <ellipse cx="20" cy="12" rx="4" ry="8" fill="#FFB6C1" opacity="0.8" transform="rotate(270 20 20)"/>
+            <ellipse cx="20" cy="12" rx="4" ry="8" fill="#FFB6C1" opacity="0.8" transform="rotate(315 20 20)"/>
+            
+            {/* 꽃 중심 */}
+            <circle cx="20" cy="20" r="3" fill="#FFE4B5"/>
+            <circle cx="20" cy="20" r="1.5" fill="#FFA500"/>
+            
+            {/* 줄기 */}
+            <rect x="19" y="25" width="2" height="12" fill="#90EE90" rx="1"/>
+            
+            {/* 잎사귀 */}
+            <ellipse cx="16" cy="30" rx="2" ry="4" fill="#90EE90" opacity="0.7" transform="rotate(-30 16 30)"/>
+            <ellipse cx="24" cy="32" rx="2" ry="3" fill="#90EE90" opacity="0.7" transform="rotate(30 24 32)"/>
+          </svg>
+        </div>
+        <div class="flower-main-text">화환은 정중히 사양합니다.</div>
+        <div class="flower-sub-text">축하해 주시는 마음만 감사히 받겠습니다.</div>
+      </div>
     </section>
   );
 }

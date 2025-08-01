@@ -39,13 +39,13 @@ export default function Profile() {
       </div>
 
       <p class="invitation-message">
-        서로 아끼고 사랑하는 마음으로
+        9년을 함께 걸어온 저희
         <br />
-        평생을 함께하고자 합니다.
+        3500일째 되는 날 평생을 함께하고자 합니다.
         <br />
         귀한 걸음 하시어 축복해 주시면
         <br />
-        더없는 기쁨으로 간직하겠습니다.
+        더없는 기쁨으로 간직하겠습니다. 
       </p>
     </section>
   );
