@@ -48,7 +48,7 @@ export default function Direction() {
       if (!window.naver || !window.naver.maps || !mapElement) return;
 
       // 파티오벨라 좌표 (안양시 동안구)
-      const location = new window.naver.maps.LatLng(37.3956, 126.9477);
+      const location = new window.naver.maps.LatLng(37.3906076, 126.9475290);
 
       const mapOptions = {
         center: location,
