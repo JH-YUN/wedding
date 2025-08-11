@@ -1,4 +1,3 @@
-import { onMount } from "solid-js";
 import weddingConfig from "../../data/wedding-config.json";
 import "./Main.css";
 import Handwrite from "./Handwrite";
