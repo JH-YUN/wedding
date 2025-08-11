@@ -1,0 +1,32 @@
+/* SVG 배경 */
+svg.handwrite {
+  background: transparent;
+}
+
+/* 마스크로 드러날 잉크(아래층 글자) */
+.ink {
+  fill: #000;
+}
+
+/* 마스크용 펜 경로 */
+.pen {
+  fill: none;
+  stroke: #fff;            /* 마스크에서 흰색=보임 */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 16;        /* 글자 두께에 맞게 조절 */
+  animation-name: draw;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+/* 점(필요할 때) */
+.pen-dot {
+  fill: #fff;
+  stroke: none;
+}
+
+/* 그리기 애니메이션 */
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
