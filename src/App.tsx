@@ -7,10 +7,13 @@ import Gallery from "./components/gallery/Gallery";
 import Calendar from "./components/calendar/Calendar";
 import Direction from "./components/direction/Direction";
 import Account from "./components/account/Account";
-import MetaTags from "./components/MetaTags";
+import TogetherTime from "./components/TogetherTime/TogetherTime";
 import FloatingShareButton from "./components/shared/FloatingShareButton";
+import MetaTags from "./components/MetaTags";
+
 import "./styles/global.css";
 import "./App.css";
+
 
 declare global {
   interface Window {
@@ -43,6 +46,7 @@ function App() {
           <Calendar />
           <Direction />
           <Account />
+          <TogetherTime />
         </div>
         
         {/* 플로팅 공유 버튼 */}
