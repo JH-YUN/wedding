@@ -9,7 +9,6 @@ import Direction from "./components/direction/Direction";
 import Account from "./components/account/Account";
 import TogetherTime from "./components/TogetherTime/TogetherTime";
 import FloatingShareButton from "./components/shared/FloatingShareButton";
-import MetaTags from "./components/MetaTags";
 import Lightbox from "./components/lightbox/Lightbox";
 
 import "./styles/global.css";
@@ -37,8 +36,6 @@ function App() {
   };
   return (
     <>
-      <MetaTags ogImageUrl="/og-image.jpg" />
-
       {/* 인트로 화면 항상 표시 */}
       <Intro />
 

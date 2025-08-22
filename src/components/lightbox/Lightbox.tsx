@@ -63,8 +63,6 @@ export default function Lightbox(props: LightboxProps) {
 
     // 향상된 스와이프 감지 - 최소 거리와 속도 고려
     if (Math.abs(diff) > 80) {  // 감도를 높여서 우발적 스와이프 방지
-      e.preventDefault(); // 스크롤 방지
-      
       if (diff > 0) {
         handleNext();
       } else {
@@ -145,19 +143,24 @@ export default function Lightbox(props: LightboxProps) {
                 transition: "opacity 0.3s ease"
               }}
             />
+            
+            {/* 왼쪽 네비게이션 버튼 - 이미지 위에 오버레이 */}
+            <button class="lightbox-nav lightbox-prev" onClick={handlePrev}>
+              ‹
+            </button>
+            
+            {/* 오른쪽 네비게이션 버튼 - 이미지 위에 오버레이 */}
+            <button class="lightbox-nav lightbox-next" onClick={handleNext}>
+              ›
+            </button>
           </div>
         </div>
 
-        <div class="lightbox-controls">
-          <button class="lightbox-nav lightbox-prev" onClick={handlePrev}>
-            ‹
-          </button>
+        {/* 카운터를 별도 영역으로 분리 */}
+        <div class="lightbox-counter-container">
           <div class="lightbox-counter">
             {currentIndex() + 1} / {props.totalImages}
           </div>
-          <button class="lightbox-nav lightbox-next" onClick={handleNext}>
-            ›
-          </button>
         </div>
       </div>
     </div>

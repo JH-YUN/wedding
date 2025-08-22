@@ -16,8 +16,6 @@ export default function Gallery() {
     return allImages().slice(0, visibleCount());
   });
 
-  console.log(visibleImages())
-
   // 더보기 버튼 표시 여부
   const hasMoreImages = createMemo(() => {
     return visibleCount() < allImages().length;
