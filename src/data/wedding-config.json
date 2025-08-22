@@ -7,10 +7,10 @@
     "brideFirstName": "진한",
     "groomFullName": "최형빈",
     "groomFirstName": "형빈",
-    "brideFatherName": "윤아빠",
-    "brideMotherName": "윤엄마",
-    "groomFatherName": "최아빠",
-    "groomMotherName": "최엄마",
+    "brideFatherName": "윤석현",
+    "brideMotherName": "김이순",
+    "groomFatherName": "최종원",
+    "groomMotherName": "류경미",
     "date": "2025-11-08T16:20:00",
     "location": "파티오벨라",
     "address": "경기도 안양시 동안구 시민대로159번길 25 1층"
@@ -32,35 +32,35 @@
   "accountInfo": {
     "groomAccounts": [
       {
-        "bankName": "KB국민은행",
-        "accountNumber": "111-456-78910",
+        "bankName": "국민은행",
+        "accountNumber": "1002-433-819951",
         "accountHolder": "최형빈"
       },
       {
-        "bankName": "신한은행",
-        "accountNumber": "222-123-456789",
+        "bankName": "국민은행",
+        "accountNumber": "23421-00-88861",
         "accountHolder": "최종원"
       },
       {
-        "bankName": "우리은행",
-        "accountNumber": "333-123-456789",
+        "bankName": "농협은행",
+        "accountNumber": "1068-02-055491",
         "accountHolder": "류경미"
       }
     ],
     "brideAccounts": [
       {
-        "bankName": "KB국민은행",
-        "accountNumber": "444-456-78910",
+        "bankName": "신한은행",
+        "accountNumber": "110-452-551170",
         "accountHolder": "윤진한"
       },
       {
-        "bankName": "신한은행",
-        "accountNumber": "555-123-456789",
+        "bankName": "하나은행",
+        "accountNumber": "181-910112-96407",
         "accountHolder": "윤석현"
       },
       {
-        "bankName": "우리은행",
-        "accountNumber": "666-123-456789",
+        "bankName": "기업은행",
+        "accountNumber": "405-018499-01-011",
         "accountHolder": "김이순"
       }
     ]

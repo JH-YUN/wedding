@@ -34,7 +34,7 @@ export default function Main() {
         </div>
 
         <div class="wedding-location">
-          <h3>{weddingConfig.weddingInfo.location} 마리에 가든홀</h3>
+          <h3>{weddingConfig.weddingInfo.location} 마리에가든홀</h3>
           <p>{weddingConfig.weddingInfo.address}</p>
         </div>
       </div>
