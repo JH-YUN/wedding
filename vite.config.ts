@@ -32,12 +32,12 @@ function generateMetaTagsPlugin() {
     <meta property="og:description" content="${description}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://jh-yun.github.io/wedding/" />
-    <meta property="og:image" content="https://jh-yun.github.io/wedding/image/pic49.jpeg" />
+    <meta property="og:image" content="https://jh-yun.github.io/wedding/image/pic4.jpeg" />
     <meta property="og:locale" content="ko_KR" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${weddingConfig.weddingInfo.groomFullName} ♥ ${weddingConfig.weddingInfo.brideFullName} 결혼식" />
     <meta name="twitter:description" content="${description}" />
-    <meta property="og:image" content="https://jh-yun.github.io/wedding/image/pic49.jpeg" />
+    <meta property="og:image" content="https://jh-yun.github.io/wedding/image/pic4.jpeg" />
       `
 
       // 기존 메타 태그들을 새로 생성된 것으로 교체
