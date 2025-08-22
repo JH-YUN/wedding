@@ -1,5 +1,5 @@
 import { onMount, Show } from "solid-js";
-import { introCompleted } from "./store";
+import { introCompleted, selectedImageId, setSelectedImageId, allImages, selectedImageIndex, totalImages } from "./store";
 import Intro from "./components/intro/Intro";
 import Main from "./components/main/Main";
 import Profile from "./components/profile/Profile";
@@ -10,6 +10,7 @@ import Account from "./components/account/Account";
 import TogetherTime from "./components/TogetherTime/TogetherTime";
 import FloatingShareButton from "./components/shared/FloatingShareButton";
 import MetaTags from "./components/MetaTags";
+import Lightbox from "./components/lightbox/Lightbox";
 
 import "./styles/global.css";
 import "./App.css";
@@ -30,6 +31,10 @@ function App() {
       console.error("Kakao SDK 초기화 실패:", error);
     }
   });
+
+  const closeLightbox = () => {
+    setSelectedImageId(null);
+  };
   return (
     <>
       <MetaTags ogImageUrl="/og-image.jpg" />
@@ -48,10 +53,18 @@ function App() {
           <Account />
           <TogetherTime />
         </div>
-        
-        {/* 플로팅 공유 버튼 */}
-        <FloatingShareButton />
       </Show>
+
+      <Show when={selectedImageId() !== null}>
+        <Lightbox
+          images={allImages()}
+          currentIndex={selectedImageIndex()}
+          totalImages={totalImages()}
+          onClose={closeLightbox}
+        />
+      </Show>
+      {/* 플로팅 공유 버튼 */}
+      <FloatingShareButton />
     </>
   );
 }

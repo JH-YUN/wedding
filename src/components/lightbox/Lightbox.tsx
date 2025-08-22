@@ -1,5 +1,6 @@
-import { createSignal, onMount, onCleanup } from "solid-js";
+import { createSignal, onMount, onCleanup, createEffect, createMemo, Show } from "solid-js";
 import { GalleryImage } from "../../types";
+import { preloadAdjacentImages, loadingImages, loadedImages } from "../../store";
 import "./Lightbox.css";
 
 interface LightboxProps {
@@ -14,7 +15,21 @@ export default function Lightbox(props: LightboxProps) {
   let startX = 0;
   let isDragging = false;
 
+  // 현재 이미지의 로딩 상태 확인
+  const currentImageSrc = createMemo(() => props.images[currentIndex()]?.src);
+  const isCurrentImageLoading = createMemo(() => {
+    const src = currentImageSrc();
+    return src ? loadingImages().has(src) : false;
+  });
+  const isCurrentImageLoaded = createMemo(() => {
+    const src = currentImageSrc();
+    return src ? loadedImages().has(src) : false;
+  });
+
   const handlePrev = () => {
+    // 로딩 중일 때는 네비게이션 방지
+    if (isCurrentImageLoading()) return;
+    
     setCurrentIndex((prev) => {
       if (prev <= 0) return props.images.length - 1;
       return prev - 1;
@@ -22,6 +37,9 @@ export default function Lightbox(props: LightboxProps) {
   };
 
   const handleNext = () => {
+    // 로딩 중일 때는 네비게이션 방지
+    if (isCurrentImageLoading()) return;
+    
     setCurrentIndex((prev) => {
       if (prev >= props.images.length - 1) return 0;
       return prev + 1;
@@ -30,17 +48,23 @@ export default function Lightbox(props: LightboxProps) {
 
   // Touch swipe handlers
   const handleTouchStart = (e: TouchEvent) => {
+    // 로딩 중일 때는 터치 이벤트 무시
+    if (isCurrentImageLoading()) return;
+    
     startX = e.touches[0].clientX;
     isDragging = true;
   };
 
   const handleTouchMove = (e: TouchEvent) => {
-    if (!isDragging) return;
+    if (!isDragging || isCurrentImageLoading()) return;
+    
     const currentX = e.touches[0].clientX;
     const diff = startX - currentX;
 
-    // Threshold for swipe
-    if (Math.abs(diff) > 50) {
+    // 향상된 스와이프 감지 - 최소 거리와 속도 고려
+    if (Math.abs(diff) > 80) {  // 감도를 높여서 우발적 스와이프 방지
+      e.preventDefault(); // 스크롤 방지
+      
       if (diff > 0) {
         handleNext();
       } else {
@@ -65,9 +89,22 @@ export default function Lightbox(props: LightboxProps) {
     }
   };
 
+  // 이미지 preloading 효과
+  createEffect(() => {
+    const index = currentIndex();
+    if (index >= 0 && props.images[index]) {
+      preloadAdjacentImages(index);
+    }
+  });
+
   onMount(() => {
     document.addEventListener("keydown", handleKeyDown);
     document.body.style.overflow = "hidden"; // Prevent background scrolling
+
+    // 초기 이미지 preload
+    if (props.currentIndex >= 0) {
+      preloadAdjacentImages(props.currentIndex);
+    }
 
     onCleanup(() => {
       document.removeEventListener("keydown", handleKeyDown);
@@ -89,8 +126,25 @@ export default function Lightbox(props: LightboxProps) {
         </button>
 
         <div class="lightbox-image-container">
-          <div class="lightbox-image-placeholder">
-            <span>이미지 {currentIndex() + 1}</span>
+          <div class="lightbox-image-wrapper">
+            {/* 로딩 스피너 */}
+            <Show when={isCurrentImageLoading()}>
+              <div class="lightbox-loading-spinner">
+                <div class="spinner"></div>
+                <span>로딩 중...</span>
+              </div>
+            </Show>
+            
+            {/* 실제 이미지 */}
+            <img 
+              src={props.images[currentIndex()]?.src} 
+              alt={props.images[currentIndex()]?.alt}
+              class="lightbox-image"
+              style={{
+                opacity: isCurrentImageLoaded() ? "1" : "0",
+                transition: "opacity 0.3s ease"
+              }}
+            />
           </div>
         </div>
 
