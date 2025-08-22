@@ -34,7 +34,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: none;
+  border: none;
   border-radius: 50%;
 }
 
@@ -76,7 +77,6 @@
   width: auto;
   height: auto;
   object-fit: contain;
-  border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -147,29 +147,6 @@
 
 .lightbox-next {
   right: 20px;
-}
-
-.lightbox-nav:hover {
-  opacity: 1;
-  transform: translateY(-50%) scale(1.1);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-}
-
-.lightbox-nav:active {
-  transform: translateY(-50%) scale(0.9);
-  opacity: 0.6;
-}
-
-/* 네비게이션 버튼 비활성화 상태 (첫 번째/마지막 이미지에서) */
-.lightbox-nav:disabled {
-  opacity: 0.2;
-  cursor: not-allowed;
-}
-
-.lightbox-nav:disabled:hover {
-  transform: translateY(-50%);
-  opacity: 0.2;
-  text-shadow: none;
 }
 
 .lightbox-counter {
