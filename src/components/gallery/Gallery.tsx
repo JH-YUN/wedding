@@ -8,7 +8,7 @@ import "./Gallery.css";
 
 export default function Gallery() {
   // 현재 보여줄 이미지 개수 상태
-  const [visibleCount, setVisibleCount] = createSignal(10);
+  const [visibleCount, setVisibleCount] = createSignal(12);
   const LOAD_INCREMENT = 10; // 한 번에 로드할 이미지 개수
 
   // 현재 보여줄 이미지들만 필터링
@@ -55,7 +55,7 @@ export default function Gallery() {
       {hasMoreImages() && (
         <div class="load-more-container">
           <button class="load-more-button" onClick={loadMoreImages}>
-            더보기 ({allImages().length - visibleCount()}장 남음)
+            더보기
           </button>
         </div>
       )}

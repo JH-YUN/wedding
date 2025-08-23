@@ -32,7 +32,7 @@ export default function TogetherTime() {
       <h2 class="section-title">함께한 시간</h2>
       <p class="together-value">"{years}년 {months}개월 {days}일"</p>
       <div class="together-time-wrapper">
-        <img src="./image/pic9.jpeg" alt="함께한 시간" />
+        <img src="./image/last.jpg" alt="함께한 시간" />
       </div>
     </section>
   )

@@ -20,7 +20,7 @@ export default function Main() {
     <section class="main-section">
       <div class="main-container">
         <div class="main-image-container">
-          <img src="./image/pic3.jpeg" alt="메인 이미지" />
+          <img src="./image/main.jpg" alt="메인 이미지" />
         </div>
 
         <div class="main-svg-wrapper">

@@ -9,7 +9,7 @@ export default function Profile() {
       <div class="couple-info">
         <div class="profile-card">
           <div class="profile-image-placeholder">
-            <span>신랑 사진</span>
+            <img src="./image/groom.jpg" alt="신랑 사진" />
           </div>
           <div class="profile-info">
             <h3>{weddingConfig.weddingInfo.groomFullName}</h3>
@@ -26,7 +26,7 @@ export default function Profile() {
 
         <div class="profile-card">
           <div class="profile-image-placeholder">
-            <span>신부 사진</span>
+            <img src="./image/bride.jpg" alt="신부 사진" />
           </div>
           <div class="profile-info">
             <h3>{weddingConfig.weddingInfo.brideFullName}</h3>

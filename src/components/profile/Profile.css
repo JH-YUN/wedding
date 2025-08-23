@@ -42,8 +42,8 @@
 }
 
 .profile-image-placeholder {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   background-color: #f0f0f0;
   margin: 0 auto 15px;
@@ -51,6 +51,7 @@
   justify-content: center;
   align-items: center;
   color: #999;
+  overflow: hidden;
 }
 
 .profile-info h3 {
